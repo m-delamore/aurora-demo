@@ -2375,13 +2375,13 @@ input, select, textarea {
 			}
 
 			.image.phone:before {
-				height: 2.5em;
+				height: ;
 				border-radius: 1em 1em 0 0;
 				border-bottom: 0;
 			}
 
 			.image.phone:after {
-				height: 3.5em;
+				height: ;
 				border-radius: 0 0 1em 1em;
 				border-top: 0;
 			}
@@ -3870,6 +3870,12 @@ input, select, textarea {
 				-webkit-justify-content: -webkit-flex-end;
 				-ms-justify-content: -ms-flex-end;
 				justify-content: flex-end;
+			}
+
+			#header .content .downloadnote{
+			    font-family: Arial, Helvetica, sans serif;
+			    font-size: 0.75em;
+			    font-color: #555555;
 			}
 
 		#header .image {
