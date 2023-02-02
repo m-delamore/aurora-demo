@@ -331,7 +331,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #828282;
+		color: #ffffff;
 	}
 
 	blockquote {
@@ -3139,8 +3139,8 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background-color: #fbfbfb;
-			color: #999999;
+			background-color: #999999;
+			color: #fbfbfb;
 		}
 
 			.wrapper.style2 input[type="submit"],
@@ -3323,7 +3323,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style2 a {
-				color: inherit;
+				color: #ffffff;
 				border-bottom-color: #d6d6d6;
 			}
 
@@ -3336,7 +3336,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #828282;
+				color: #ffffff;
 			}
 
 			.wrapper.style2 blockquote {
