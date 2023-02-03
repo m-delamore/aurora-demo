@@ -3877,6 +3877,14 @@ input, select, textarea {
 			    font-size: 0.75em;
 			    font-color: #555555;
 			}
+			
+			#header .content .justified{
+			    font-family: Arial, Helvetica, sans serif;
+			    font-size: 0.75em;
+			    font-color: #555555;
+				justify-content:right;
+			}
+
 
 		#header .image {
 		    border: solid 2px rgba(0, 125, 255, 0.25);
