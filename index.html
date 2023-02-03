@@ -33,35 +33,112 @@
 
 		<!-- One -->
 			<section id="one" class="wrapper style2 special">
-				<header class="major">
-					<h2>My Development Journey</h2>
-				</header>
+				<p>
+					Do note that this website is still <u>UNDER CONSTRUCTION</u>. The template I'm using is not the best I found. :p
+				</p>
 			</section>
 
 		<!-- Two -->
 			<section id="two" class="wrapper">
 				<div class="inner alt">
-					<section class="spotlight">
+					<section class="spot">
 						<div class="content">
-							<h3>Basic Features not included</h3>
 							<p>
-							<h4>Save System</h4>
-									<li>Why? The save system came to mind towards the end of the project. Aurora's death count is tied to a persistent actor which does not have states set up. This causes complications and I do not want to break the game at this point.</li>
-									<li>Will I implement? Yes soon-ish.</li>
+								<h4>What is this?</h4>
+								<li>This demo has a beginning, mid and end, on a very small scale.</li>
+								<li>This demo is developed with C++ and Blueprint. Gameplay functionalities are mostly C++. Cinematic and cosmetic ones are mostly Blueprint.</li>
+								<li>It will probably take about more or less 15 minutes to complete the demo, unless you're a game tester and spends time to try to break the game.</li>
+								<li>On that note, I tried my very best for it to be bug-free. There are a few bugs in the game, but I considered them to be a low P5 issue > Backlog > Forever.</li>
+								<li>Apologies in advance if you do encounter soft-locks or crashes. This small demo was not thoroughly tested. Do message me if you encounter one.</li>
 							</p>
 							<p>
-							<h4>Auto-Target System</h4>
-									<li>Why? Reduced scope.</li>
-									<li>Will I implement? No.</li>
-							</p>
-							<p>
-							<h4>Secret Achievements</h4>
-									<li>What is it? I can't tell you. They are secret achievements.</li>
-									<li>Why? Reduced scope.</li>
-									<li>Will I implement? I see how life goes on.</li>
+								<h4>Software Tools used</h4>
+								<li>Unreal Engine 5.0</li>
+								<li>Maya 2020 (Student version)</li>
+								<li>PhotoPea - Online Photo Editor (I highly recommend this! It's basically like Photoshop, and it's friggin' free!)</li>
+								<li>Sound Forge Audio Studio</li>
 							</p>
 						</div>
 					</section>
+					<section class="spot">
+						<div class="content">
+							<h3>Known Issues</h3>
+							<p>
+							<h4>Super short duration of the start-up logo animation and loading screen.</h4>
+									<li>This just means you have a fast computer. Congrats! :P </li></li>
+									<li>It was a simple setup with Async Loading Screen plugin. I had only solved the issue with the background asset not loading in it by pre-loading it in Blueprint. I would have used the Manual Stop option to be able to control the timing but that would be a Backlog for my Unreal engine experience.</li>
+							</p>
+							<p>
+							<h4>There is a small chance that enemies will wander into an area with a barrier and then not able to get out.</h4>
+									<li>Considered a P5 because if that enemy can still be killed as it will eventually run toward Aurora where her sword can still reach it. </li>
+							</p>
+							<p>
+							<h4>Enemies turn towards Aurora in an instant.</h4>
+									<li>Ya... there was no turn rate logic applied to the Move To function.</li>
+									<li>Had known this at the beginning of the project. I did not put it to task in Trello. Only realized this after packaging. That's the story.</li>
+									<li>Will I fix this? Nah. For this small demo, it's fine.</li>
+							</p>
+						</div>
+					</section>
+					<section class="spot">
+						<div class="content">
+							<h3>Features taken off due to reduced scope.</h3>
+							<p>
+								<h4>IK Leg</h4>
+								<li>There was a plugin for this but it broke some of Aurora's animation. And it does not support UE 5.0. For it to work, I need to add a bunch more conditionals.
+								<li>Will I implement? Probably. Will create a much more simpler one.</li>
+								</p>
+							<p>
+								<h4>Save System</h4>
+								<li>The save system came to mind towards the end of the project. And I really wanted to do this but...
+								<li>Aurora's death count is tied, one-way, to a persistent actor which does not have states set up. This causes complications and I do not want to break the game at this point.</li>
+								<li>Will I implement? Yes soon-ish.</li>
+							</p>
+							<p>
+								<h4>Auto-Target System</h4>
+								<li>Why? Reduced scope.</li>
+								<li>Will I implement? Decided not to. But will do this in my next Unreal project.</li>
+							</p>
+							<p>
+								<h4>Secret Achievements</h4>
+								<li>What is it? I can't tell you. They are secret achievements.</li>
+								<li>Why? Reduced scope.</li>
+								<li>Will I implement? This will make the demo even more intersting. I see how life goes on for me.</li>
+							</p>
+							<p>
+								<h4>Shooting Stars and a Galaxy based on particles.</h4>
+								<li>This is just to add glitter to an already good-looking demo. P10!</li>
+							</p>
+						</div>
+					</section>
+					<section class="spot">
+						<div class="content">
+							<h3>Features intended but abandoned.</h3>
+							<p>
+							<h4>Ranged Enemy</h4>
+								<li>The AI Behaviour is gonna kill me. Nuff said.</li>
+							</p>
+							<p>
+							<h4>Evil Twin of Aurora as the Final Boss</h4>
+								<li>This will take another 3 months... unpaid.</li>
+								<li>Also, AI Behaviour.</li>
+							</p>
+							<p>
+							<h4>Use the Ability System</h4>
+								<li>This was what put me off when I started this project 2 years ago.</li>
+								<li>I still have to learn it.</li>
+								<li>Will I implement? In the next project or an even more, manageable scale.</li>
+							</p>
+						</div>
+					</section>
+
+					<section id="one" class="wrapper style2 special">
+						<header class="major">
+							<h2>Development Journey</h2>
+							<h3>This is going to be a lengthy page about the development.</h3>
+						</header>
+					</section>
+
 					<section class="spotlight">
 						<div class="image"><img src="images/pic03.jpg" alt="" /></div>
 						<div class="content">
@@ -69,6 +146,7 @@
 							<p>I developed this demo to demo-n-strate my Unreal capabilities. While I ensured the basic features of a simple 3rd-person sci-fi game is to be executed well, I brought on more focus to <strong>sequences and animation</strong>, as I believed cinematics is my thing and is fun to do. More info on this coming soon.</p>
 						</div>
 					</section>
+
 					<section class="spotlight">
 						<div class="image"><img src="images/aurora-face.jpg" alt="" /></div>
 						<div class="content">
@@ -76,6 +154,7 @@
 							<p>I came across this Hero character in the UE Marketplace and know for certain I would want to showcase my Unreal capabilities with her. Also, I like all things Aurora, the magical waves in the sky of Iceland, the beloved Norwegian singer, sleeping... More info for this to come.</p>
 						</div>
 					</section>
+
 					<section class="spotlight">
 						<div class="image"><img src="images/Level.png" alt="" /></div>
 						<div class="content">
@@ -83,8 +162,9 @@
 							<p>The level was created with assets from the Paragon Props pack in the UE Marketplace. It is inspired by the bridge in Niflheim from God of War (2018)... More info to come.</p>
 						</div>
 					</section>
+
 					<section class="special">
-						Do note that this portfolio website is still <u>UNDER CONSTRUCTION</u>. :) Thank you for your concern in advance!
+
 						<ul class="icons labeled">
 							<li><span class="icon solid fa-sync"><span class="label"></span></span></li>
 								<li></span></span></li>
