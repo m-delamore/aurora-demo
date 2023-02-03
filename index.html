@@ -48,14 +48,18 @@
 								<h4>What is this demo about?</h4>
 								<li>A simple 3rd person melee combat game that has a beginning, mid and end, on a very small scale.</li>
 								<li>This demo is developed with C++ and Blueprint. Gameplay functionalities are mostly C++. Cinematic and cosmetic ones are mostly Blueprint.</li>
+								<li> <strong>No gameplay system or functioanality packs were used at all!</strong> Only assets.</li>
 								<li>It will probably take about more or less 15 minutes to complete the demo, unless you're a game tester and spends time to try to break the game.</li>
-								<li>On that note, I tried my very best for it to be bug-free. There are a few bugs in the game, but I considered them to be a low P5 issue > Backlog > Forever.</li>
+								<li>On that note, I tried my very best for it to be free of bugs. There are a few bugs in the game, but I considered them to be a low P5 issue > Backlog > Forever.</li>
 								<li>Apologies in advance if you do encounter soft-locks or crashes. This small demo was not thoroughly tested. Do message me if you encounter one.</li>
+								<li>Game balance favors the player to be able to complete the game with at most two deaths (Game over before reaching the end? You are that bad at games, aren't you?). Meaning... it's not tweaked for "balanced" experience. This is just a demo anyway.</li>
 							</p>
 							<p>
 								<h4>Software Tools used</h4>
 								<li>Unreal Engine 5.0</li>
 								<li>Visual Studio 2022</li>
+								<li>Sourcetree (using Bitbucket)</li>
+								<li>Trello - Definitely need this even for small demo.</li>
 								<li>Maya 2020 (Student version)</li>
 								<li>PhotoPea - Online Photo Editor (I highly recommend this! It's basically like Photoshop, and it's friggin' free!)</li>
 								<li>Sound Forge Audio Studio</li>
@@ -80,6 +84,13 @@
 									<li>Had known this at the beginning of the project. I did not put it to task in Trello. Only realized this after packaging. That's the story.</li>
 									<li>Will I fix this? Nah. For this small demo, it's fine.</li>
 							</p>
+							<p>
+							<h4>Frame Rate drop upon Aurora's Death</h4>
+								<li>This is due to the special effects used upon that event. I used the effects provided from the UE Aurora pack, which consists of Cascade particles, which are known to take up significant GPU resources.</li>
+								<li>You would also noticed there is frame rate drop whenever the camera faces the fire pits (higher elevation).</li>
+								<li>Surprisingly, the fire effect was provided with the Starter Content pack... and it's also a Cascade system.</li>
+								<li>Why didn't I convert them to the Niagara system instead? Little experience on Niagara + need to find Unreal developer job asap = no time</li>
+							</p>
 						</div>
 					</section>
 					<section class="spot">
@@ -87,7 +98,7 @@
 							<h3>Features taken off due to reduced scope.</h3>
 							<p>
 								<h4>IK Leg</h4>
-								<li>There was a plugin for this but it broke some of Aurora's animation. And it does not support UE 5.0. For it to work, I need to add a bunch more conditionals.
+								<li>There was a Marketplace pack for this but it broke some of Aurora's animation. And it does not support UE 5.0. For it to work, I need to add a bunch more conditionals.
 								<li>Will I implement? Probably. Will create a much more simpler one.</li>
 								</p>
 							<p>
@@ -126,10 +137,10 @@
 								<li>Also, AI Behaviour.</li>
 							</p>
 							<p>
-							<h4>Use the Ability System</h4>
+							<h4>To use the Ability System</h4>
 								<li>This was what put me off when I started this project 2 years ago.</li>
 								<li>I still have to learn it.</li>
-								<li>Will I implement? In the next project or an even more, manageable scale.</li>
+								<li>Will I implement? In the next project on an even smaller, more manageable scale.</li>
 							</p>
 						</div>
 					</section>
