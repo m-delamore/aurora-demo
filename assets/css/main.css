@@ -2275,7 +2275,7 @@ input, select, textarea {
 /* Image */
 
 	.image {
-		border-radius: 6px;
+		border-radius: 5px;
 		border: 0;
 		display: inline-block;
 		position: relative;
@@ -2921,6 +2921,7 @@ input, select, textarea {
 	.wrapper {
 		padding: 4.5em 0 2.5em 0 ;
 		background-color: #003262;
+		background-image: url(images/overlay.png), url(images/pattern-size1.svg);
 		border-bottom: solid 2px #eeeeee;
 	}
 
@@ -3139,7 +3140,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background-color: #999999;
+			background-color: #777777;
 			color: #fbfbfb;
 		}
 
