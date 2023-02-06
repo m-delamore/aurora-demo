@@ -79,24 +79,63 @@
 					</section>
 					<section class="spot">
 						<div class="content">
-							<h3>Known Issues</h3>
+							<h3 style="text-align: center">Asset Accreditation</h3>
+								<h4>3D Meshes</h4>
+								<ul>
+								<li><strong>Alliance Statue</strong></li>
+									Lost the source as I downloaded this 2 years ago. But this is definitely royalty free which anyone can get from any 3D asset service website.
+								<li><strong>Crown</strong></li>
+									Initally named "Tiara". Also lost the source but it is also royalty free and can be found in any 3D assets service website.
+								</ul>
+								<h4>In-game Icons</h4>
+								<ul>
+									<li>All icons in the game are downloaded from <a href="www.flaticon.com/free-icons">www.flaticon.com/free-icons</a></li>
+									<li>Animated Loading Logo - <a href="https://loading.io/">loading.io</a></li>
+								</ul>
+								<h4>Additional Special Effects</h4>
+								<ul>
+									<li><strong>RPG FX Starter Pack</strong> - Monthly Free Asset in the UE Marketplace</li>
+									<li><strong>Niagara Mega VFX Pack Vol. 1</strong> - Monthly Free Asset from the UE Marketplace</li>
+									<li><strong>Sword Trail Pack</strong> - Monthly Free Asset from the UE Marketplace</li>
+								</ul>
+								<h4>Sounds</h4>
+								<ul>
+									<li><strong>Magic & Spells Sounds Pro</strong> - Monthly Free Asset in the UE Marketplace</li>
+									<li><strong>Footsteps Sounds</strong> by Bartosz Kamol Kaminski - Monthly Free Asset from the UE Marketplace</li>
+									<li><a href="https://99sounds.org/free-sound-effects/">99 Sound Effects</a></li>
+									<li><a href="https://assetstore.unity.com/packages/audio/sound-fx/universal-sound-fx-17256">Universal Sound FX by Imphenzia</a> - Actually bought this way back when I was a Unity devleoper.</li>
+								</ul>
+								<h4>Music</h4>
+								<a href="www.purple-planet.com">www.purple-planet.com</a>
+								<ul>
+									<li>Immuration (When enemies Spawn)</li>
+									<li>Intimidation (The Evil Twin sequence)</li>
+									<li>Deep Space Exploration (End Credits)</li>
+								</ul>
+								Immersive Dark Ambient Music
+								<li><strong>Positive Event Loop</strong> - Monthly Free Asset from the UE Marketplace</li>
+						</div>
+					</section>
+					<section class="spot">
+						<div class="content">
+							<h3 style="text-align: center">Known Issues</h3>
 							<p>
-							<h4>AUR-001 - Super short duration of the start-up logo animation and loading screen.</h4>
+							<h4>AUR-001 | Super short duration of the start-up logo animation and loading screen.</h4>
 									<li>This also means you have a fast computer. Congrats! :P </li>
 									<li>It was a simple setup with Async Loading Screen plugin. I had only solved the issue with the background asset not loading in it by pre-loading it in Blueprint. I would have used the Manual Stop option to be able to control the timing but that would be a Backlog for my Unreal engine experience.</li>
 							</p>
 							<p>
-							<h4>AUR-002 - There is a small chance enemies will wander into an area with a barrier and then not able to get out.</h4>
+							<h4>AUR-002 | There is a small chance enemies will wander into an area with a barrier and then not able to get out.</h4>
 									<li>Considered a P5 priority because that enemy can still be killed as it will eventually run toward Aurora where her sword can still reach it. </li>
 							</p>
 							<p>
-							<h4>AUR-003 - Enemies turn towards Aurora in an instant.</h4>
+							<h4>AUR-003 | Enemies turn towards Aurora in an instant.</h4>
 									<li>So... there was no turn rate logic applied to the Move To function.</li>
 									<li>Had known this at the beginning of the project. I did not put it to task in Trello. Only realized this after packaging. That's the story.</li>
 									<li>Will I fix this? Nah. For this small demo, it's fine.</li>
 							</p>
 							<p>
-							<h4>AUR-004 - Frame rate drop upon Aurora's Death</h4>
+							<h4>AUR-004 | Frame rate drop upon Aurora's Death</h4>
 								<li>This is due to the special effects activated upon that event. I used the effects provided from the UE Aurora pack, which consists of Cascade particles, which are known to take up significant GPU resources.</li>
 								<li>You would also noticed there is frame rate drop whenever the camera faces the fire pits (higher elevation).</li>
 								<li>Surprisingly, the fire effect was provided with the Starter Content pack... and it's also a Cascade system.</li>
@@ -106,11 +145,11 @@
 					</section>
 					<section class="spot">
 						<div class="content">
-							<h3>Features taken off due to reduced scope.</h3>
+							<h3 style="text-align: center">Features taken off due to reduced scope.</h3>
 							<p>
 								<h4>IK Leg</h4>
-								<li>There was a Marketplace pack for this but it broke some of Aurora's animation. And it does not support UE 5.0. For it to work, I need to add a bunch more conditionals.
-								<li>Will I implement? Probably. Will create a much more simpler one.</li>
+								<li>There was a Marketplace pack for this but it was too expansive (includes slope and animation warping) and there were too many variables involved. Integrating it will need more testing of all the animation, thus taking up more time. It does not support UE 5.0 anyways.
+								<li>Will I implement? Probably. Will create a much more simpler one perhaps.</li>
 								</p>
 							<p>
 								<h4>Save System</h4>
@@ -137,7 +176,7 @@
 					</section>
 					<section class="spot">
 						<div class="content">
-							<h3>Features intended but abandoned.</h3>
+							<h3 style="text-align: center">Features intended but abandoned.</h3>
 							<p>
 							<h4>Ranged Enemy</h4>
 								<li>The AI Behaviour is gonna kill me. Nuff said.</li>
