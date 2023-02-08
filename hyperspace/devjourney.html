@@ -23,8 +23,8 @@
 							<li><a href="#brief">Brief Intro</a></li>
 							<li><a href="#leveldesign">Level Creation</a></li>
 							<li><a href="#combatdesign">Combat and Gameplay</a></li>
-							<li><a href="#four">Hit React Animation</a></li>
-							<li><a href="#five">Enemy Spawn Manager</a></li>
+							<li><a href="#hitreact">Hit React Animation</a></li>
+							<li><a href="#enemyspawn">Enemy Spawn Manager</a></li>
 							<li><a href="#six">Dash Ability</a></li>
 							<li><a href="#seven">Blast Ability</a></li>
 							<li><a href="#eight">Headgears</a></li>
@@ -53,9 +53,24 @@
 							<div class="content">
 								<div class="inner">
 									<h2>Intention</h2>
-									<p>I developed this demo to demo-n-strate my Unreal capabilities. While I have ensured the basic features of a simple 3rd-person melee combat game is to be executed well, 
+									<p>I developed this demo to demo-n-strate my Unreal Engine capabilities. While I have ensured the basic features of a simple 3rd-person melee combat game is to be executed well, 
 										I brought on more focus to <strong>sequences and animation</strong>, as I believed cinematics is my thing and is fun to do.</p>
-									<p>This project was actually started in Unreal Enigne 4. When I picked it up again in Oct 2022, I successfully converted it to Unreal Engine 5.0</p>
+									<p>This project was actually started in Unreal Enigne 4.6. When I picked it up again in Oct 2022, I successfully converted it to Unreal Engine 5.0. 
+										At that point, the only features present was sword collision on enemies only and basic AI navigation.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Generic</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="images/aurora-ue4.png" class="image"><img src="images/Aurora.png" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Goal</h2>
+									<p>I was browsing through all the assets that came with the Paragon Aurora pack and there were really interesting and wonderful materials, animation and special effects.
+										 So I picked up the project again with a goal in mind - to develop as many features as I can within a self-stipulated time, so I can use most, if not all, of the animation and special effects present. 
+										 This turned out to be more of a Paragon Hero appreciation demo. :)</p>
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Generic</a></li>
 									</ul>
@@ -66,7 +81,7 @@
 							<a href="images/aurora-face.jpg" class="image"><img src="images/aurora-face.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Why Aurora</h2>
+									<h2>But Why Aurora?</h2>
 									<p>I came across this Hero character in the UE Marketplace and know for certain I would want to showcase my Unreal capabilities with her.
 										Also, I like all things Aurora, the magical waves in the sky of Iceland, the beloved Norwegian singer, sleeping...</p>
 									<ul class="actions">
@@ -103,6 +118,9 @@
 									</p>
 								</section>
 							</div>
+							<ul class="actions">
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
+							</ul>
 						</div>
 					</section>
 					<section id="combatdesign" class="wrapper style3 fade-up">
@@ -118,7 +136,7 @@
 									<p><ul>
 										<li>Aurora has combo attacks, which consists of 3 animation. They came pre-configured in Blueprint but I converted them to C++, because I wanted to add more stuff to it.</li>
 										<li>Aurora has 2 abilties. Each ability call consumes a certain amount of Energy from her Energy pool, which is represented by the yellow bar at the top of the screen.</li>
-										<ul>
+										<ul style="list-style-type: circle;">
 											<li>Notice that this bar is separated into 2 parts (there is a gap).</li>
 											<li>If Aurora's Energy pool is completely depleted after an ability call, she will go into the Exhausted state, in which she will not be able to move, and becomes vulnerable to attacks.</li>
 											<li>During the time she is in the Exhausted state, she will be recovering Energy (the only function that uses her own Actor Tick). The Energy bar will slowly replenish by itself over a certain duration.</li>
@@ -133,13 +151,13 @@
 									<h3>Melee Enemies</h3>
 									<p><ul>
 										<li>Hitting an enemy will cancel any attack animation it is currently playing. However, this does not apply to the Aurora character. 
-											<ul>
+											<ul style="list-style-type: circle;">
 												<li>I pulled out the Interrupted pin off the animation node to finish its BT Task, leaving it to <strong>immediately</strong> play the Hit React animation.</li>
 												<li>Not to self-sabotage myself but it's better to be honest here - how this worked was kind of an accident and this is only my theory. But I promise to do more experimentation on this.</li>
 											</ul>
 										</li>
 										<li>Enemy should have a small delay between attacks.
-											<ul><li>They were chaotically dangerous without it. Their attack animations are pretty fast compared to Aurora's default one.</li></ul>
+											<ul style="list-style-type: none;"><li>They were chaotically dangerous without it. Their attack animations are pretty fast compared to Aurora's default one.</li></ul>
 										</li>
 										<li>Enemies have a limited sight detection range. If they do not see Aurora within a certain radius (currently set at 500m), they will wander about. This is controlled in its AI Behavior Tree.</li>
 										<li>Each melee enemy has 2 swords. There are a few attack animation for the melee enemy. It can swing one sword, either from its left or right arm, or both swords at the same time. Which animation to play is random.</li>
@@ -147,19 +165,107 @@
 										<li>There are 2 melee enemy variation. The stronger one (which can only be spawned at the upper part of the level) was a child of the base Melee Enemy class.</li>
 									</ul></p>
 								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
+							</ul>
+						</div>
+					</section>
+					<section id="hitreact" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Hit React Animation</h2>
+							<p>Both Aurora and Melee Enemy characters will play an animation when they are hit, what animation to be played depends on the direction the hit came from.</p>
+							<div class="features">
 								<section>
 									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+									<h3>Animation</h3>
+									<p>Both Aurora and the Melee Enemy class have 4 hit react animation each, for when they are hit from the Front, Back and their sides.</p>
+									<a href="images/Aurora-HitReact.gif" class="image"><img src="images/Aurora-HitReact.gif" alt=""/></a>
 								</section>
+							</div>
+							<div class="features" style="display: flex; flex-direction: row;">
+								<section style="width: 50%;">
+									<span class="icon solid major fa-gem"></span>
+									<h3>How was this done</h3>
+									<a href="images/HitReactSketch.jpg" class="image"><img src="images/HitReactSketch.jpg" alt=""/></a>
+								</section>
+								<section style="padding: 1em;">
+									<p> This is my sketch of the logic for knowing the direction. I've separated an actor's angle into 8 segments. 
+									If the hit comes from the front, then it is Segments 1 & 8.</p>
+									<p>
+										<ul>
+											<li>FindLookAtRotation is the key function to use here. It gives you the rotation value of an actor from the owner.</li>
+											<li>However, the angle needs to be recalculated in respect to the owner.</li>
+											<li>The class requires at least 4 animation, otherwise the editor will display an error when it tries to play a Hit React animation.</li>
+										</ul>
+									</p>
+									<a href="images/HitReactFunction-MD.png" class="image"><img src="images/HitReactFunction-MD.png" alt=""/></a>
+								</section>
+							</div>
+							<div class="features">
 								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+									<span class="icon solid major fa-link"></span>
+									<h3></h3>
+									<p>However, to ensure that designers or integrators have assigned the correct number of animation in the Blueprint, I left a small note on the attribute in the Details panel.
+										This was done with meta specifiers.
+									</p>
+									<a href="images/HitReactAnimationNoteDisplay.png" class="image"><img src="images/HitReactAnimationNoteDisplay.png" alt=""/></a>
+								</section>
+							</div>
+						</div>
+					</section>
+					<section id="enemyspawn" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Enemy Spawn Manager</h2>
+							<p></p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Functionality</h3>
+									<p><ul>
+											<li>Each trigger of the Enemy Spawn Manager by Aurora will spawn <strong>waves</strong> of enemies. A new wave will begin after the last enemy in the current wave is defeated.</li>
+											<ul style="list-style-type: circle;">
+												<li>The straight forward way to do this is to use "Get All Actors of Class" each time an enemy is killed to check if there are anymore enemies left in the level by comparing their numbers. 
+													However, this will probably cause performance issues if let's say there are 100 enemies on the level.</li>
+												<li>What I did was to create a delegate on the Enemy class and broadcast about its death to the Spawn Manager, which it has registered in Begin Play, just before it is destroyed. 
+													The Spawn Manager will do the comparing of numbers and determine if the current wave has indeed ended.</li>
+											</ul>
+												<li>The number of waves increases by 1 for every subsequent trigger, up to a specified maximum number. It starts with at least 2 waves.</li>
+												<li>For each wave, a specified number of enemies will be spawned. Together with the number of waves, these numbers are adjustable in the actor's Details panel.</li>
+												<li>Each enemy will spawn on scene with an interval in between spawns.</li>
+										</ul>
+									</p>
+								</section>
+							</div>
+							<div class="features" style="display: flex; flex-direction: row;">
+								<section style="width: 50%;">
+									<a href="images/EnemySpawnManagerDetails.png" class="image"><img src="images/EnemySpawnManagerDetails.png" alt=""/></a>
+								</section>
+								<section style="padding: 1em;">
+									<ul>
+										<li>Whenever a new wave starts, an environment event sequence is played. This includes the increasing, and then decreasing, rotational speed of various revolving actors in the level. 
+											They are communicated with the use of Event Dispatchers in Blueprint instead.</li>
+										<li>Giving player time to breath, they have to wait for a short duration, determined by the Trigger Interval, before she can trigger the next group of waves. 
+											This, and many other time-based functions in this project, are handled by the World Timer Manager with timer handles in C++.</li>
+									</ul>
+
+								</section>
+							</div>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Blueprint Widgets</h3>
+									<p>
+										<ul>
+											<li>Spawn locations can be specified either by manually inputting the coordinates.</li>
+											<li>Or, using the widget provided. They are created using meta specifiers (note though that this type of widget only works with struct variables, eg. vectors).
+										</ul>
+									<a href="images/Editor-SpawnLoactionWidget.png" class="image"><img src="images/Editor-SpawnLoactionWidget.png" alt=""/></a>
+									</p>
 								</section>
 							</div>
 							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
 							</ul>
 						</div>
 					</section>
@@ -168,7 +274,10 @@
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<p>I can be contacted via email.
+							<a href="mailto:181mdelamore@gmail.com">181mdelamore@gmail.com</a>
+							</p>
+
 							<div class="split style1">
 								<section>
 									<form method="post" action="#">
@@ -195,26 +304,24 @@
 									<ul class="contact">
 										<li>
 											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
+											<span><br />
+											<br />
+											</span>
 										</li>
 										<li>
 											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
+											<span>(+65) 8157-2695</span>
 										</li>
 										<li>
 											<h3>Social</h3>
 											<ul class="icons">
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+												<!--
 												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+												-->
 											</ul>
 										</li>
 									</ul>
