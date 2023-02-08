@@ -25,9 +25,9 @@
 							<li><a href="#combatdesign">Combat and Gameplay</a></li>
 							<li><a href="#hitreact">Hit React Animation</a></li>
 							<li><a href="#enemyspawn">Enemy Spawn Manager</a></li>
-							<li><a href="#six">Dash Ability</a></li>
-							<li><a href="#seven">Blast Ability</a></li>
-							<li><a href="#eight">Headgears</a></li>
+							<li><a href="#dash">Dash Ability</a></li>
+							<li><a href="#blast">Blast Ability</a></li>
+							<li><a href="#headgears">Headgears</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -40,7 +40,8 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 							<h1>Aurora's Development Journey</h1>
-							<p>Not all the features in the demo will be documented or described here. I will gladly answer any questions in interviews, hopefully. :D</p>
+							<p>Not all the features in the demo will be documented or described here. I will gladly answer any questions about the other features in interviews. :D</p>
+							<p style="font-family: Arial, Helvetica, sans serif; font-size: 0.75em; font-color: #555555;">Best viewed in <strong>Landscape</strong> mode.</p>
 							<ul class="actions">
 								<li><a href="../index.html" class="button scrolly">Back to Aurora Main Page</a></li>
 							</ul>
@@ -180,7 +181,7 @@
 									<span class="icon solid major fa-link"></span>
 									<h3>Animation</h3>
 									<p>Both Aurora and the Melee Enemy class have 4 hit react animation each, for when they are hit from the Front, Back and their sides.</p>
-									<a href="images/Aurora-HitReact.gif" class="image"><img src="images/Aurora-HitReact.gif" alt=""/></a>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5l3eIdbk1MU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 								</section>
 							</div>
 							<div class="features" style="display: flex; flex-direction: row;">
@@ -189,14 +190,14 @@
 									<h3>How was this done</h3>
 									<a href="images/HitReactSketch.jpg" class="image"><img src="images/HitReactSketch.jpg" alt=""/></a>
 								</section>
-								<section style="padding: 1em;">
+								<section style="padding: 5em 1em 5em 1em;">
 									<p> This is my sketch of the logic for knowing the direction. I've separated an actor's angle into 8 segments. 
 									If the hit comes from the front, then it is Segments 1 & 8.</p>
 									<p>
 										<ul>
 											<li>FindLookAtRotation is the key function to use here. It gives you the rotation value of an actor from the owner.</li>
 											<li>However, the angle needs to be recalculated in respect to the owner.</li>
-											<li>The class requires at least 4 animation, otherwise the editor will display an error when it tries to play a Hit React animation.</li>
+											<li>The class requires at least 4 animation, otherwise the editor will display an error when it tries to play a Hit React animation upon being hit.</li>
 										</ul>
 									</p>
 									<a href="images/HitReactFunction-MD.png" class="image"><img src="images/HitReactFunction-MD.png" alt=""/></a>
@@ -212,6 +213,9 @@
 									<a href="images/HitReactAnimationNoteDisplay.png" class="image"><img src="images/HitReactAnimationNoteDisplay.png" alt=""/></a>
 								</section>
 							</div>
+							<ul class="actions">
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
+							</ul>
 						</div>
 					</section>
 					<section id="enemyspawn" class="wrapper style3 fade-up">
@@ -226,8 +230,8 @@
 											<li>Each trigger of the Enemy Spawn Manager by Aurora will spawn <strong>waves</strong> of enemies. A new wave will begin after the last enemy in the current wave is defeated.</li>
 											<ul style="list-style-type: circle;">
 												<li>The straight forward way to do this is to use "Get All Actors of Class" each time an enemy is killed to check if there are anymore enemies left in the level by comparing their numbers. 
-													However, this will probably cause performance issues if let's say there are 100 enemies on the level.</li>
-												<li>What I did was to create a delegate on the Enemy class and broadcast about its death to the Spawn Manager, which it has registered in Begin Play, just before it is destroyed. 
+													However, this will probably cause performance issues if let's say there are 100 enemies on the level!</li>
+												<li>What I did was to create a delegate on the Enemy class and broadcast about its death to the Spawn Manager just before it is destroyed. 
 													The Spawn Manager will do the comparing of numbers and determine if the current wave has indeed ended.</li>
 											</ul>
 												<li>The number of waves increases by 1 for every subsequent trigger, up to a specified maximum number. It starts with at least 2 waves.</li>
@@ -240,11 +244,12 @@
 							<div class="features" style="display: flex; flex-direction: row;">
 								<section style="width: 50%;">
 									<a href="images/EnemySpawnManagerDetails.png" class="image"><img src="images/EnemySpawnManagerDetails.png" alt=""/></a>
+									Details panel - Enemy Spawn Manager variables.
 								</section>
-								<section style="padding: 1em;">
+								<section style="padding: 5em 1em 5em 1em;">
 									<ul>
-										<li>Whenever a new wave starts, an environment event sequence is played. This includes the increasing, and then decreasing, rotational speed of various revolving actors in the level. 
-											They are communicated with the use of Event Dispatchers in Blueprint instead.</li>
+										<li>Whenever a new wave starts, an environment event sequence is played. This includes the increasing (and then decreasing) of the rotational speed of various revolving actors in the level. 
+											They are communicated to the manager via the use of Event Dispatchers in Blueprint instead.</li>
 										<li>Giving player time to breath, they have to wait for a short duration, determined by the Trigger Interval, before she can trigger the next group of waves. 
 											This, and many other time-based functions in this project, are handled by the World Timer Manager with timer handles in C++.</li>
 									</ul>
@@ -269,8 +274,83 @@
 							</ul>
 						</div>
 					</section>
+					<section id="dash" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Dash Ability</h2>
+							<p></p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3></h3>
+									<p><ul>
+										<li></li>
+									</ul></p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3></h3>
+									<p><ul>
+										<li></li>
+									</ul></p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
+							</ul>
+						</div>
+					</section>
+					<section id="blast" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Blast Ability</h2>
+							<p></p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3></h3>
+									<p><ul>
+										<li></li>
+									</ul></p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3></h3>
+									<p><ul>
+										<li></li>
+									</ul></p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
+							</ul>
+						</div>
+					</section>
+					<section id="headgears" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>The Crown and the Halo</h2>
+							<p></p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3></h3>
+									<p><ul>
+										<li></li>
+									</ul></p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3></h3>
+									<p><ul>
+										<li></li>
+									</ul></p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
+							</ul>
+						</div>
+					</section>
 
-				<!-- Three -->
+				<!-- CONTACT -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Get in touch</h2>
@@ -329,7 +409,6 @@
 							</div>
 						</div>
 					</section>
-
 			</div>
 
 		<!-- Footer -->
