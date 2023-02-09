@@ -41,7 +41,7 @@
 						<div class="inner">
 							<h1>Aurora's Development Journey</h1>
 							<p>Not all the features in the demo will be documented or described here. I will gladly answer any questions about the other features in interviews. :D</p>
-							<p style="font-family: Arial, Helvetica, sans serif; font-size: 0.75em; font-color: #555555;">Best viewed in <strong>Landscape</strong> mode.</p>
+							<p style="font-family: Arial, Helvetica, sans serif; font-size: 0.75em; font-color: #555555;">This page is best viewed in <strong>Landscape</strong> mode.</p>
 							<ul class="actions">
 								<li><a href="../index.html" class="button scrolly">Back to Aurora Main Page</a></li>
 							</ul>
@@ -103,7 +103,7 @@
 									<span class="icon solid major fa-code"></span>
 									<h3>Inspiration</h3>
 									<a href="images/God of War_NiflheimBridge1.jpg" class="image"><img src="images/God of War_NiflheimBridge1.jpg" alt=""/></a>
-									<p>The image above is a screenshot from God of War (2018), showing the Niflheim brigde.</p>
+									<p>The image above is a screenshot from God of War (2018), showing the Niflheim bridge.</p>
 									<a href="images/Level.png" class="image"><img src="images/Level.png" alt="" /></a>
 									<p>Completed static assets placement of the level. No blocking was initially done prior to this.</p>
 								</section>
@@ -154,7 +154,7 @@
 										<li>Hitting an enemy will cancel any attack animation it is currently playing. However, this does not apply to the Aurora character. 
 											<ul style="list-style-type: circle;">
 												<li>I pulled out the Interrupted pin off the animation node to finish its BT Task, leaving it to <strong>immediately</strong> play the Hit React animation.</li>
-												<li>Not to self-sabotage myself but it's better to be honest here - how this worked was kind of an accident and this is only my theory. But I promise to do more experimentation on this.</li>
+												<li>To be honest, how this worked is a theory of mine, as the implementation was kind of an accident. But it was exactly what I wanted (this line seemed self-sabotgaing but better to be frank than sorry).</li>
 											</ul>
 										</li>
 										<li>Enemy should have a small delay between attacks.
@@ -191,14 +191,14 @@
 									<a href="images/HitReactSketch.jpg" class="image"><img src="images/HitReactSketch.jpg" alt=""/></a>
 								</section>
 								<section style="padding: 5em 1em 5em 1em;">
-									<p> This is my sketch of the logic for knowing the direction. I've separated an actor's angle into 8 segments. 
-									If the hit comes from the front, then it is Segments 1 & 8.</p>
-									<p>
-										<ul>
-											<li>FindLookAtRotation is the key function to use here. It gives you the rotation value of an actor from the owner.</li>
-											<li>However, the angle needs to be recalculated in respect to the owner.</li>
-											<li>The class requires at least 4 animation, otherwise the editor will display an error when it tries to play a Hit React animation upon being hit.</li>
-										</ul>
+									<p>It was a simple "where is the actor who hit you standing in respect to you" solution. Nothing complex that involves physicsal assets or something.</p>
+									<p>← This is my sketch of the logic for knowing the direction. I've separated an actor's angle into 8 segments. 
+									If the hit comes from the front, then it is Segments 1 & 8.
+									<ul>
+										<li>FindLookAtRotation is the key function to use here. It gives you the rotation value of an actor from the owner.</li>
+										<li>However, the angle needs to be recalculated in respect to the owner.</li>
+										<li>The class requires at least 4 animation, otherwise the editor will display an error when it tries to play a Hit React animation upon being hit.</li>
+									</ul>
 									</p>
 									<a href="images/HitReactFunction-MD.png" class="image"><img src="images/HitReactFunction-MD.png" alt=""/></a>
 								</section>
@@ -221,7 +221,6 @@
 					<section id="enemyspawn" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Enemy Spawn Manager</h2>
-							<p></p>
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-cog"></span>
@@ -262,8 +261,8 @@
 									<h3>Blueprint Widgets</h3>
 									<p>
 										<ul>
-											<li>Spawn locations can be specified either by manually inputting the coordinates.</li>
-											<li>Or, using the widget provided. They are created using meta specifiers (note though that this type of widget only works with struct variables, eg. vectors).
+											<li>Spawn locations can be specified either by manually inputting the coordinates...</li>
+											<li>Or, using the widgets provided with the Blueprint. They are created using meta specifiers (note though that this type of widget only works with struct variables, eg. vectors).
 										</ul>
 									<a href="images/Editor-SpawnLoactionWidget.png" class="image"><img src="images/Editor-SpawnLoactionWidget.png" alt=""/></a>
 									</p>
@@ -277,21 +276,106 @@
 					<section id="dash" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Dash Ability</h2>
-							<p></p>
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-cog"></span>
-									<h3></h3>
+									<h3>Inspiration</h3>
+									<p>First of all, I had never played (and still have not played) Paragon, the game of which these Epic Games assets came from.
+										<ul>
+											<li>While I was browsing through the assets from the Paragon Aurora pack, I came across a singular SFX folder that is called "Dash".</li>
+											<li>From instinct, (and probably due to experience from playing games for more than half of my life), 
+												I deduced it could be an ability where Aurora lunges forward over some distance at a high speed. It immediately made me think of Mass Effect!</li>
+										</ul>
+									</p>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/F8ujxBKluGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 									<p><ul>
-										<li></li>
+											<li>I <strong>love</strong> Mass Effect Andromeda! (and the infamous trilogy, and also its Remastered version!) Despite its chaotic, buggy launch, the combat with the variety of abilities is so addictive.
+											The ambience, biomes and world-building makes it so immersive too! Best played on PC with better hardware!</li>
+											<li>Apologies I digress. But the coolest ability in the game, in my opinion, is the Biotics ability called "Charge". 
+											When this ability is activated, the player character will flung herself in the direction she is facing at high speeds. 
+											This is even cooler when the ability is activated while she is in the air.</li>
+											<li>I take some reference from there.</li>
 									</ul></p>
 								</section>
 								<section>
 									<span class="icon solid major fa-desktop"></span>
-									<h3></h3>
-									<p><ul>
-										<li></li>
-									</ul></p>
+									<h3>Implementation - Impulse or Add Force to "Dash"</h3>
+									<p>
+										This was quite an onerous undertaking for me. New to developing in-game abilities in Unreal Engine, I had difficulty deciding what is the best approach for Aurora to "dash". 
+										<ul>
+											<li>After scouring the Internet for a while, I decided to use Impulse at first.</li>
+											<li>However, it feels too instantaneous. On top of tweaking the Impulse value with Velocity Change set to false, it also involves tweaking the Braking Friction and its Factor value in her Character Movement component.</li>
+											<li>After spending hours tweaking these values, I still could not feel it.</li>
+											<ul style="list-style-type: circle;">
+												<li>First of all, no matter what, the dashing still feels too instantaneous. She looked more like teleporting rather than gliding over a distance, which is what I actually wanted.</li>
+												<li>Second, it is so difficult to align with the timing from the provided animation and the special effect tied to that ability.</li>
+											</ul>
+											<li>At some point, a line in the tooltip for the Add Impulse function caught my eye. It mentions about using Add Force. But this has to be done under a Tick function.<br />
+												(On that note, I just want to say UE >=4.2, >=5.0 is so well-documented now, as compared to when I started using it 10 years ago - UE 3.0).
+											</li>
+											<li>Voila! Add Force does work pretty well. I do not had to tweak the Braking Friction at all. And I was able to match the ability with the provided animation and special effect with ease!</li>
+										</ul>
+									</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>The Dash Ability Support Class</h3>
+									<p>
+										Do I place her abilities on the Main Character (Aurora) class? Do I create a component class and attach to the Main Character class instead?<br />
+										I decided to just create a new Actor class where *everything* related to this ability is controlled. I felt it was a much easier approach.
+										<ul>
+											<li>I called it the "Support" class because anything that can help to correctly activate and run this ability will go here. My naming sense is open for constructive criticism.</li>
+											<li>This class shall be a persistent actor in the level. It is where it will "get" Aurora when the game begins and attach itself to her in the right orientation.</li>
+											<li>When the Dash ability is activated by player's input, it has to go through a sequence:</li>
+											<ul style="list-style-type: circle;">
+												<li>There is a brief warm-up.</li>
+												<li>It's followed by the actual Force effect, which has her gliding on the floor.</li>
+												<li>Then Aurora brakes with her heel and stops.</li>
+												<li>Cooldown runs before the ability can be activated again.</li>
+											</ul>
+											<li>This sequence of events are controlled with the Timer Manager in C++.</li>
+											<li>The Dash ability does damage on any enemy in its path. It can stun and damage only one enemy.</li>
+											<ul style="list-style-type: circle;">
+												<li>This is intended as I placed a boolean in the collision delegate, so it can only overlap one actor until the ability ends.</li>
+												<li>It also give Impulse to the overlapped enemy. At the moment, it will simple move backwards, regardless of which direction it is facing.</li>
+											</ul>
+										</ul>
+									</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Dash Ability Camera</h3>
+									<p>
+										I wanted players to feel like they were not able to catch up with Aurora's Dash.
+										<ul>
+											<li>In Mass Effect Andromeda, when the Charge ability is called, the camera widens its FOV during the warmup. 
+												For Aurora, I felt her warm-up (to match her animation at 1.0 speed) was too fast and does not suit.</li>
+											<li>To achieve this, I created a camera actor and placed it further back behind her. It is attached to the Ability Support class.</li>
+											<li>The camera will then "blend" to this from the Aurora character's own camera, only while she is gliding on the floor, hopefully giving players the feel that she is dashing too fast away from it.</li>
+											<li>However, when the ability is called, the camera will snap to be behind her first.</li>
+											<ul style="list-style-type: circle;">
+												<li>It made sense to me to do it this way, since I wanted to have such a Dash camera from behind her in the beginning.</li>
+												<li>If it was not done this way, it can have undesirable effect on the camera movement, making players even more nauseous. 🤮</li>
+											</ul>
+										</ul>
+									</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>What I Want to Improve</h3>
+									<p>
+									<ul>
+										<li>For the Dash ability to be able to stun and damage multiple enemies on its path, rather than just one.</li>
+										<ul style="list-style-type: circle;">
+											<li>I did it this way because there is a tendency for the collision box to overlap the same actor again, especially when the actor Impulses in the same direction Aurora is dashing towards.</li>
+											<li>Instead of a boolean, I can setup an array of FName. Each time the collision overlaps an actor, it takes the Name of it (on the level) and compares with the array (using String Literal) to see if it already overlaps it.</li>
+										</ul>
+										<li>The direction of the enemy to move not just backwards upon being hit by the ability.</li>
+										<ul style="list-style-type: circle;">
+											<li>I can use Find Look At Rotation of the enemy at the Warm-up stage of the ability, and then move it in that direction instead when it is being hit.</li>
+										</ul>
+									</ul>
+									</p>
 								</section>
 							</div>
 							<ul class="actions">
@@ -302,21 +386,43 @@
 					<section id="blast" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Blast Ability</h2>
-							<p></p>
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-cog"></span>
-									<h3></h3>
+									<h3>Reference</h3>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zz5Tb91Upo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+									<p>Taking reference from the Nova ability (if my memory serves me right, I think that's what it's called) in Mass Effect Andromeda. So cool, right? 💙</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Implementation</h3>
 									<p><ul>
-										<li></li>
+										<li>The approach and setup is the same as with the Dash ability.</li>
+										<li>However, this time we have two spheres of collision.</li>
+										<ul style="list-style-type: circle;">
+											<li>The inner sphere is where the actual amount of damage and impulse is applied.</li>
+											<li>The outer sphere acts like a dropoff radius. At the moment, it only applies 0.5 of the damage and impulse amount.</li>
+										</ul>
+										<li>Enemies that are within the maximum radius will be affected by the Blast ability, making them stunned and take tremendous damage.</li>
 									</ul></p>
 								</section>
 								<section>
 									<span class="icon solid major fa-desktop"></span>
-									<h3></h3>
-									<p><ul>
-										<li></li>
-									</ul></p>
+									<h3>Camera and Visual Feedback</h3>
+									<p>With the player camera setup for Aurora, which is at her eye level and not too far back, it would be quite difficult for players to perceive what has happened when the ability is activated in that short amount of time.	
+									<ul>
+										<li>This is especially when enemies can run towards Aurora from any direction, the enemies that were affected by the Blast ability were often out of view.</li>
+										<li>Widening the FOV will make Aurora, and even the enemies around her, rather small and weird. I did not like the result from it.</li>
+										<li>Rather, I created another camera actor and positioned it such that it will always show the inner radius of the Blast ability. Players should easily see the enemies that were within that radius.</li>
+										<li>There should also be visual feedback to indicate which enemies are within that radius. Players should easily perceive this while in the Warm-up stage, just before the "blast" itself is activated.
+											<ul style="list-style-type: circle;">
+												<li>Finding the right particle effects for this was not easy, I was not able to find the appropriate one.</li>
+												<li>So I heavily tweaked one Niagara particle system from a free pack (RPG Effects) to get what I needed.</li>
+											</ul>
+									</ul>
+									<a href="images/Niagara_Blast.png" class="image"><img src="images/Niagara_Blast.png" alt=""/></a>
+									</p>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4w2LZbxDXvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 								</section>
 							</div>
 							<ul class="actions">
@@ -326,23 +432,49 @@
 					</section>
 					<section id="headgears" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>The Crown and the Halo</h2>
+							<h2>The Crown of Queen Aurora and Halo of Paragon's Angel</h2>
 							<p></p>
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-cog"></span>
-									<h3></h3>
-									<p><ul>
-										<li></li>
-									</ul></p>
+									<h3>Inspiration</h3>
+									<p>There was an episode in Big Bang Theory where Amy was upset with Sheldon about something and was adamant that no amount of gifts or jewelry will uplift her 
+										but her mood was quickly changed 180 to immense jubilee when Sheldon bought her a Tiara on advice from Penny.<br />
+										I thought, "hmm... a tiara on Aurora will be so cool".
+										<ul>
+											<li>Scavenging the internet for a free 3D model of a tiara, I came across this crown instead (image below).</li>
+											<li>After reducing its poly count in Maya, I did not like how it looked on her. So I re-modelled to make it look like an actual tiara instead.</li>
+										</ul>
+									</p>
+									<p style="font-family: Arial, Helvetica, sans serif; font-size: 0.75em;">
+										<a href="images/CrownBefore.png" class="image"><img src="images/CrownBefore.png" alt=""/></a><br />
+										The original Crown model, a free 3D model from the internet, after reduced poly count.
+									</p>
+									<p style="font-family: Arial, Helvetica, sans serif; font-size: 0.75em;">
+										<a href="images/CrownAfter.png" class="image"><img src="images/CrownAfter.png" alt=""/></a><br />
+										The "Crown" after a re-model in Maya 2020.
+									</p>
+									<p>
+										<a href="images/HeadgearOnAurora.png" class="image"><img src="images/HeadgearOnAurora.png" alt=""/></a><br />
+										Kawaii! 😄
+									</p>
+									<p>
+										<ul>
+											<li>The level I created has these "wing" sections, the result of inspiration from the bridge in God of War (see the <a href="#leveldesign">Level Creation</a> section). I had not thought what it would be for.</li>
+											<li>So naturally displaying the headgears there would be a good idead. But then I need one more headgear.</li>
+											<li>The Halo came easily to mind. It would be so easy to make. Furthermore, I came across a jaw-dropping, awesome-looking material from the Props pack, that is appropriate for the Halo model.</li>
+										</ul>
+									</p>
 								</section>
 								<section>
 									<span class="icon solid major fa-desktop"></span>
-									<h3></h3>
-									<p><ul>
+									<h3>Aurora Stats Buffs and Nerfs</h3>
+									<p>When Aurora dons a headgear, 
+										<ul>
 										<li></li>
 									</ul></p>
 								</section>
+
 							</div>
 							<ul class="actions">
 								<li><a href="../index.html" class="button">Back to Main Page</a></li>
