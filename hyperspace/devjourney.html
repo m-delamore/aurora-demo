@@ -28,6 +28,7 @@
 							<li><a href="#dash">Dash Ability</a></li>
 							<li><a href="#blast">Blast Ability</a></li>
 							<li><a href="#headgears">Headgears</a></li>
+							<li><a href="#lessons">Lessons Learnt</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -35,7 +36,7 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
+				<!-- Spell Check on Client contenteditable="true" spellcheck="true" -->
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
@@ -56,11 +57,8 @@
 									<h2>Intention</h2>
 									<p>I developed this demo to demo-n-strate my Unreal Engine capabilities. While I have ensured the basic features of a simple 3rd-person melee combat game is to be executed well, 
 										I brought on more focus to <strong>sequences and animation</strong>, as I believed cinematics is my thing and is fun to do.</p>
-									<p>This project was actually started in Unreal Enigne 4.6. When I picked it up again in Oct 2022, I successfully converted it to Unreal Engine 5.0. 
-										At that point, the only features present was sword collision on enemies only and basic AI navigation.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Generic</a></li>
-									</ul>
+									<p>This project actually started in Unreal Engine 4.6. When I picked it up again in Oct 2022, I successfully converted it to Unreal Engine 5.0. 
+										At that point, the only features present was sword collision on enemies and Move To task for its AI navigation.</p>
 								</div>
 							</div>
 						</section>
@@ -69,12 +67,10 @@
 							<div class="content">
 								<div class="inner">
 									<h2>Goal</h2>
-									<p>I was browsing through all the assets that came with the Paragon Aurora pack and there were really interesting and wonderful materials, animation and special effects.
-										 So I picked up the project again with a goal in mind - to develop as many features as I can within a self-stipulated time, so I can use most, if not all, of the animation and special effects present. 
-										 This turned out to be more of a Paragon Hero appreciation demo. :)</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Generic</a></li>
-									</ul>
+									<p>I browsed through all of the assets that came with the Paragon packs. They were really eye-catching and interesting materials, animation and special effects. It got me hyped up.
+										 So I picked up the project again with a goal in mind - to develop as many features as I can within a self-stipulated time, so I can use most, if not all, of the animation and special effects provided. 
+										 This project turned out to be more of a Paragon Hero appreciation demo. 😄</p>
+									
 								</div>
 							</div>
 						</section>
@@ -85,9 +81,7 @@
 									<h2>But Why Aurora?</h2>
 									<p>I came across this Hero character in the UE Marketplace and know for certain I would want to showcase my Unreal capabilities with her.
 										Also, I like all things Aurora, the magical waves in the sky of Iceland, the beloved Norwegian singer, sleeping...</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Generic</a></li>
-									</ul>
+									
 								</div>
 							</div>
 						</section>
@@ -110,12 +104,8 @@
 								<section>
 									<span class="icon solid major fa-lock"></span>
 									<h3>Custom Meshes</h3>
-									<p>There were a few tiling meshes in the level which I created from scratch using Maya 2020.
-										<ul>
-											<li>Stair Trims</li>
-											<li>Statue Base Trims</li>
-											<li>Mid Bridge Structure</li>
-										</ul>
+									<p>There were tiling meshes in the level which I created from scratch using Maya 2020.
+										<a href="images/Trim_BaseStairs.png" class="image"><img src="images/Trim_BaseStairs.png" alt="" /></a>
 									</p>
 								</section>
 							</div>
@@ -136,7 +126,7 @@
 									<h3>Aurora</h3>
 									<p><ul>
 										<li>Aurora has combo attacks, which consists of 3 animation. They came pre-configured in Blueprint but I converted them to C++, because I wanted to add more stuff to it.</li>
-										<li>Aurora has 2 abilties. Each ability call consumes a certain amount of Energy from her Energy pool, which is represented by the yellow bar at the top of the screen.</li>
+										<li>Aurora has 2 abilities. Each ability call consumes a certain amount of Energy from her Energy pool, which is represented by the yellow bar at the top of the screen.</li>
 										<ul style="list-style-type: circle;">
 											<li>Notice that this bar is separated into 2 parts (there is a gap).</li>
 											<li>If Aurora's Energy pool is completely depleted after an ability call, she will go into the Exhausted state, in which she will not be able to move, and becomes vulnerable to attacks.</li>
@@ -154,7 +144,7 @@
 										<li>Hitting an enemy will cancel any attack animation it is currently playing. However, this does not apply to the Aurora character. 
 											<ul style="list-style-type: circle;">
 												<li>I pulled out the Interrupted pin off the animation node to finish its BT Task, leaving it to <strong>immediately</strong> play the Hit React animation.</li>
-												<li>To be honest, how this worked is a theory of mine, as the implementation was kind of an accident. But it was exactly what I wanted (this line seemed self-sabotgaing but better to be frank than sorry).</li>
+												<li>To be honest, that is my own perceived theory of how it worked, as the implementation was kind of a happy discovery - it was exactly what I wanted anyway (this line seemed self-sabotaging but better to be frank about my level of expertise).</li>
 											</ul>
 										</li>
 										<li>Enemy should have a small delay between attacks.
@@ -191,7 +181,7 @@
 									<a href="images/HitReactSketch.jpg" class="image"><img src="images/HitReactSketch.jpg" alt=""/></a>
 								</section>
 								<section style="padding: 5em 1em 5em 1em;">
-									<p>It was a simple "where is the actor who hit you standing in respect to you" solution. Nothing complex that involves physicsal assets or something.</p>
+									<p>It was a simple "know where the actor who hit you is standing at" solution. It did not involve physical assets or anything similar that is complex.</p>
 									<p>← This is my sketch of the logic for knowing the direction. I've separated an actor's angle into 8 segments. 
 									If the hit comes from the front, then it is Segments 1 & 8.
 									<ul>
@@ -401,7 +391,7 @@
 										<li>However, this time we have two spheres of collision.</li>
 										<ul style="list-style-type: circle;">
 											<li>The inner sphere is where the actual amount of damage and impulse is applied.</li>
-											<li>The outer sphere acts like a dropoff radius. At the moment, it only applies 0.5 of the damage and impulse amount.</li>
+											<li>The outer sphere acts like a drop-off radius. At the moment, it only applies 0.5 of the actual damage and impulse amount from the inner sphere.</li>
 										</ul>
 										<li>Enemies that are within the maximum radius will be affected by the Blast ability, making them stunned and take tremendous damage.</li>
 									</ul></p>
@@ -432,15 +422,15 @@
 					</section>
 					<section id="headgears" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>The Crown of Queen Aurora and Halo of Paragon's Angel</h2>
+							<h2>The Crown and The Halo</h2>
 							<p></p>
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-cog"></span>
 									<h3>Inspiration</h3>
 									<p>There was an episode in Big Bang Theory where Amy was upset with Sheldon about something and was adamant that no amount of gifts or jewelry will uplift her 
-										but her mood was quickly changed 180 to immense jubilee when Sheldon bought her a Tiara on advice from Penny.<br />
-										I thought, "hmm... a tiara on Aurora will be so cool".
+										but her mood quickly changed 180 to immense jubilee when Sheldon bought her a Tiara on advice from Penny.<br />
+										I thought, "hmm... a tiara on Aurora will be so cool" 😆.
 										<ul>
 											<li>Scavenging the internet for a free 3D model of a tiara, I came across this crown instead (image below).</li>
 											<li>After reducing its poly count in Maya, I did not like how it looked on her. So I re-modelled to make it look like an actual tiara instead.</li>
@@ -456,12 +446,12 @@
 									</p>
 									<p>
 										<a href="images/HeadgearOnAurora.png" class="image"><img src="images/HeadgearOnAurora.png" alt=""/></a><br />
-										Kawaii! 😄
+										Kawaii! 😄❤️
 									</p>
 									<p>
 										<ul>
 											<li>The level I created has these "wing" sections, the result of inspiration from the bridge in God of War (see the <a href="#leveldesign">Level Creation</a> section). I had not thought what it would be for.</li>
-											<li>So naturally displaying the headgears there would be a good idead. But then I need one more headgear.</li>
+											<li>So naturally displaying the headgears there would be a good idea. But then I need one more headgear.</li>
 											<li>The Halo came easily to mind. It would be so easy to make. Furthermore, I came across a jaw-dropping, awesome-looking material from the Props pack, that is appropriate for the Halo model.</li>
 										</ul>
 									</p>
@@ -469,12 +459,67 @@
 								<section>
 									<span class="icon solid major fa-desktop"></span>
 									<h3>Aurora Stats Buffs and Nerfs</h3>
-									<p>When Aurora dons a headgear, 
+									<p>When Aurora dons a headgear, there will be some buffs and a nerf to her combat stats.
 										<ul>
-										<li></li>
-									</ul></p>
+											<li><strong>Crown of Queen Aurora</strong></li>
+											<ul style="list-style-type: circle;">
+												<li>Extend Sword Reach - <i style="font-size: 0.9em; color:#ffffff99;">Behind the scenes, the length of the sword collision box is extended by factor of 1.5. This also adds the ability to damage even enemies behind an enemy.
+													I wanted to place an additional particle effect to the end of the sword to indicate this but I figured the change of the sword trail should be enough.</i></li>
+												<li>Increased Sword Damage Attack Speed by 25% - <i style="font-size: 0.9em; color:#ffffff99;">I had setup a separate montage and trim the end of all 3 attack animation. 
+													Upon donning this headgear, the attack animation will play from this montage instead.</i></li>
+												<li>2 more Health fragments will always spawn from Enemy's death - 
+													<i style="font-size: 0.9em; color:#ffffff99;">Simply tell the Enemy actor, which Aurora already got from sword collision, to spawn more fragments. I had to add 1 more argument to pass that information.</i></li>
+												<li>(Curse) Increase Damage taken</li>
+											</ul>
+											<li><strong>Halo of Paragon's Angel</strong></li>
+											<ul style="list-style-type: circle;">
+												<li>Decreased Energy usage per Ability call</li>
+												<li>Shorter Exhaustion Recovery Duration - <i style="font-size: 0.9em; color:#ffffff99;">Actually, simply increase the recovery rate. This avoids having to adjust the related UI real-time, 
+													have I decided to reduce the Minimum Threshold (the gap in the Energy Bar) instead for example.</i></li>
+												<li>2 more Energy fragments will always spawn from Enemy's death</li>
+												<li>(Curse) Decreased Sword Damage</li>
+											</ul>
+											The final decisions on the buffs and nerfs above are made based with the thought that I do not have to manipulate / adjust the UI in real-time. This saved a good amount of time.
+										</ul>
+									</p>
 								</section>
-
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Headgear Display and Area Barriers</h3>
+									<p>The headgear display and the barriers that go up when enemies are spawned, are Blueprint classes of their own. 
+										The headgears communicate with these objects in the level via its dynamic multicast delegates so I can assign and broadcast them not only in C++ but also in Blueprints of different, multiple objects!
+										<ul>
+											<li>The barrier guarding the Headgear Display will not go up if Aurora has equipped that related headgear at least once.</li>
+											<li>The Headgear Display will "de-activate" when Aurora equips the headgear on that display.</li>
+											<li>If Aurora equips a headgear on display, while she already has equipped the other headgear, 
+												this other headgear will be put back to its display. That display will "re-activate".</li>
+											<li>The "screen" that comes up for each display was a <strong>design solution</strong>. Initially for afar, players would not be able to discern anything because it was too small.</li>
+										</ul>
+										<a href="images/HeadgearWithNoScreen.png" class="image"><img src="images/HeadgearWithNoScreen.png" alt=""/></a><br />
+									</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="../index.html" class="button">Back to Main Page</a></li>
+							</ul>
+						</div>
+					</section>
+					<section id="lessons" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Lessons Learnt</h2>
+							<div class="features">
+								<section>
+									<ul>
+										<li>When developing a new feature, it's best to test it out on Blueprint first before committing it to C++. It takes time to build a project 
+											and can be frustrating at times when i have to build at every iteration.</li>
+										<li>On the other hand, if I intend to develop a new feature on Blueprint, create the C++ class of it first. 
+											Because you never know if you may want to commit it to C++ later on. This happened to me a few times. Then, I encountered issues when I try to create the C++ class after.</li>
+										<li>No harm in exposing ALL (this can be debated) public variables in a class to Blueprint, unless you're absolutely, very certain it is not going to be used elsewhere. 
+											Again, building projects is time-consuming.</li>
+										<li>I have to be more careful in using anim notifies in montages. I would only use it when I know for certain the function WILL be called at that stage of animation. 
+											I came across many a confusing bug that is caused by the animation being interrupted before the anim notify is called.</li>
+									</ul>
+								</section>
 							</div>
 							<ul class="actions">
 								<li><a href="../index.html" class="button">Back to Main Page</a></li>
@@ -485,12 +530,16 @@
 				<!-- CONTACT -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>Get in touch</h2>
+							<h2>Get In Touch</h2>
 							<p>I can be contacted via email.
 							<a href="mailto:181mdelamore@gmail.com">181mdelamore@gmail.com</a>
 							</p>
-
-							<div class="split style1">
+							<h2>Social</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span> GitHub</a></li>
+									<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span> LinkedIn</a></li>
+								</ul>
+<!--						<div class="split style1">
 								<section>
 									<form method="post" action="#">
 										<div class="fields">
@@ -529,16 +578,15 @@
 											<ul class="icons">
 												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-												<!--
 												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												-->
+												
 											</ul>
 										</li>
 									</ul>
 								</section>
-							</div>
+							</div> -->
 						</div>
 					</section>
 			</div>
