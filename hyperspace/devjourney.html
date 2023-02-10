@@ -141,20 +141,29 @@
 									<span class="icon solid major fa-desktop"></span>
 									<h3>Melee Enemies</h3>
 									<p><ul>
-										<li>Hitting an enemy will cancel any attack animation it is currently playing. However, this does not apply to the Aurora character. 
+										<li>Hitting an enemy will cancel any attack animation it is currently playing. However, this does not apply to the Aurora character.</li>
 											<ul style="list-style-type: circle;">
 												<li>I pulled out the Interrupted pin off the animation node to finish its BT Task, leaving it to <strong>immediately</strong> play the Hit React animation.</li>
-												<li>To be honest, that is my own perceived theory of how it worked, as the implementation was kind of a happy discovery - it was exactly what I wanted anyway (this line seemed self-sabotaging but better to be frank about my level of expertise).</li>
+												<li>For Aurora, her class has the Movement states. I placed a conditional such that she will not react to being hit while she is attacking, thus not canceling her attack animation.</li>
+												<li>This gives players way more advantage. But as I said in the main page, this is intended.</li>
 											</ul>
-										</li>
-										<li>Enemy should have a small delay between attacks.
-											<ul style="list-style-type: none;"><li>They were chaotically dangerous without it. Their attack animations are pretty fast compared to Aurora's default one.</li></ul>
-										</li>
+										<li>Enemy should have a small delay between attacks.</li>
+											<ul style="list-style-type: circle;">
+												<li>They were chaotically dangerous without it. Their attack animations are pretty fast compared to Aurora's default one.</li>
+											</ul>
 										<li>Enemies have a limited sight detection range. If they do not see Aurora within a certain radius (currently set at 500m), they will wander about. This is controlled in its AI Behavior Tree.</li>
-										<li>Each melee enemy has 2 swords. There are a few attack animation for the melee enemy. It can swing one sword, either from its left or right arm, or both swords at the same time. Which animation to play is random.</li>
 										<li>All melee enemies (not the End Game Boss though) will enter Stun state whenever they are hit by any of Aurora's abilities. Melee enemies have movement states that determine the animation and AI Behavior.</li>
 										<li>There are 2 melee enemy variation. The stronger one (which can only be spawned at the upper part of the level) was a child of the base Melee Enemy class.</li>
 									</ul></p>
+									<p>
+										<h4>Enemy Animation</h4>
+										<ul>
+											<li>Each melee enemy has 2 swords but it can swing them in a variety of ways - one sword only, either with its left or right arm first, or both swords at the same time. 
+												Furthermore, there are a few variation for each way. Which animation to play is random.</li>
+											<li>There are also 5 different death animation for this enemy. The animation to play depends on what killed it and how, but there is a 35% chance of playing the "kneeling"
+												if it was killed by Aurora's sword.</li>
+										</ul>
+									</p>
 								</section>
 							</div>
 							<ul class="actions">
@@ -164,12 +173,12 @@
 					</section>
 					<section id="hitreact" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>Hit React Animation</h2>
+							<h2>Reacting to Hits</h2>
 							<p>Both Aurora and Melee Enemy characters will play an animation when they are hit, what animation to be played depends on the direction the hit came from.</p>
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-link"></span>
-									<h3>Animation</h3>
+									<h3>Hit React Animation</h3>
 									<p>Both Aurora and the Melee Enemy class have 4 hit react animation each, for when they are hit from the Front, Back and their sides.</p>
 									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5l3eIdbk1MU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 								</section>
