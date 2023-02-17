@@ -232,12 +232,13 @@
 													The Spawn Manager will do the comparing of numbers and determine if the current wave has indeed ended.</li>
 											</ul>
 												<li>The number of waves increases by 1 for every subsequent trigger, up to a specified maximum number. It starts with at least 2 waves.</li>
-												<li>For each wave, a specified number of enemies will be spawned. Together with the number of waves, these numbers are adjustable in the actor's Details panel.</li>
+												<li>For each wave, a specified number of enemies will be spawned. Together with the number of waves, these numbers are adjustable (user-defined) in the actor's Details panel.</li>
 												<li>Each enemy will spawn on scene with an interval in between spawns.</li>
 										</ul>
 									</p>
-									<p style="font-size: 0.75em; color:#999999">* Pardon for the lack of flowcharts for this. It was developed on the go when I was coding for this feature as I had a concrete idea of what I should do in mind.
-									There was no conceptualization or documentation stage for this project anyways. 😋</p>
+									<img src="images/EnemySpawnManagerFlowchart.png" style="width: 100%;">
+									<!-- <p style="font-size: 0.75em; color:#999999">* Pardon for the lack of flowcharts for this. It was developed on the go when I was coding for this feature as I had a concrete idea of what I should do in mind.
+									There was no conceptualization or documentation stage for this project anyways. 😋</p> -->
 								</section>
 							</div>
 							<div class="features" style="display: flex; flex-direction: row;">
@@ -520,12 +521,12 @@
 							<div class="features">
 								<section>
 									<ul>
-										<li>When developing a new feature, it's best to test it out on Blueprint first before committing it to C++. It takes time to build a project 
-											and can be frustrating at times when i have to build at every iteration.</li>
+										<li>When developing a new feature, it's best to test it out on Blueprint first before committing it to C++. It takes time to build/compile a project 
+											and can be frustrating at times when i have to compile at every iteration.</li>
 										<li>On the other hand, if I intend to develop a new feature on Blueprint, create the C++ class of it first. 
 											Because you never know if you may want to commit it to C++ later on. This happened to me a few times. Then, I encountered issues when I try to create the C++ class after.</li>
 										<li>No harm in exposing ALL (this can be debated) public variables in a class to Blueprint, unless you're absolutely, very certain it is not going to be used elsewhere. 
-											Again, building projects is time-consuming.</li>
+											Again, compiling projects is time-consuming.</li>
 										<li>I have to be more careful in using anim notifies in montages. I would only use it when I know for certain the function WILL be called at that stage of animation. 
 											I came across many a confusing bug that is caused by the animation being interrupted before the anim notify is called.</li>
 									</ul>
