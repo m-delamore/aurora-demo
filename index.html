@@ -26,33 +26,118 @@
 			<header id="header">
 				<div class="content">
 					<h1>AURORA</h1>
-					<p>A small <strong>Unreal Engine 5.0</strong> Demo <br />
+					<p>An <strong>Unreal Engine 5.0</strong> Demo <br />
 					Developed by</p>
 					<h2>Muhsen Delamore</h2>
 					<ul class="actions">
-						<li><a href="https://drive.google.com/file/d/1TM02ei_hiVQRLNk2u2QW2U-TPEZYZwZy/view?usp=share_link" class="button primary icon solid fa-download">Download for Windows</a></li>
+						<li><a href="https://drive.google.com/file/d/1KT29hFsQpnaw5Rpmds78EbV3K44M-KjT/view?usp=sharing" class="button primary icon solid fa-download">Download for Windows</a></li>
 						<li><a href="hyperspace/devjourney.html" class="button icon solid fa-chevron-right scrolly">Development Journey</a></li>
 					</ul>
-					<p class="downloadnote">* <strong>Minimum Req. </strong>: Windows 10 / 11, 7th Gen CPU, 16GB RAM, GTX 1080, with at least 6GB of VRAM.</p>
-					<p class="downloadnote">Unzip file on anywhere and click on the exe. If Windows 11 blocks the .exe 
-						<br /> (I made this from Win10 development environment sorry), simply click on <u>More Info</u>.
-						<br /> You can run an anti-virus to scan the file if you want.
-						<br /> It is completely safe if downloaded from this Google Drive link (File size is ~1.8GB).
+					<p class="downloadnote">There is now a <strong>Version 1.10</strong> final update!</p>
+					<!--<p class="downloadnote">*Minimum Req. : Windows 10 / 11, 7th Gen CPU, 16GB RAM, GTX 1080, with at least 6GB of VRAM.</p>-->
+					<p class="downloadnote">Unzip file on anywhere and click on the exe. If Windows blocks the .exe, simply click on <u>More Info</u>.
+						<br /> You can run an anti-virus to scan the file but it is completely safe if downloaded from
+						<br /> the Google Drive link (File size is ~1.9GB).
+						<br />
 						<br /> Do message me for any help. Have fun!</p>
 				</div>
 				<div class="image phone"><div class="inner"><img src="images/Aurora.png" alt="" /></div></div>
 			</header>
 
 		<!-- One -->
-			<section id="one" class="wrapper style2 special" style="border-top: solid 2px #eeeeee;">
-				<header class="major">
-					<ul style="text-align: center">
-						<a href="GameplayVideoEmbed.html" class="button icon solid scrolly" style="padding: 5px 20px 5px 20px; background-color: #003262;"><h3 style="text-align: center;">Watch Gameplay Video</h3></a>
-					</ul>
-					<p>For mac users, you can watch the gameplay footage instead.</p>
-					<h3>For Windows users, I like to highly recommend playing the demo first BEFORE watching the video. 😅</h3>
-				</header>
-			</section>
+		<section id="two" class="wrapper style2 special" style="border-top: solid 2px #eeeeee;">
+			<div class="inner alt">
+				<section class="spot">
+					<div class="content">
+						<h3 style="text-align: center; font-family: 'Courier New', Courier, monospace;">Version 1.10 Update</h3>
+						As of 9th Sept 2023, I have added a couple of features to this demo, as well as made some improvements. This will be my last, final update on this project as I now embark on a new, more ambitious project.
+						The new features were in my to-do list back when I completed the project 6 months ago. You can now see my 
+						<a href="https://bitbucket.org/delamorean/auroracleaned/commits/">commits for this Aurora project here</a>.
+					</div>
+				</section>
+			</div>
+		</section>
+		<section id="one" class="wrapper">
+			<!-- Spell Check on Client contenteditable="true" spellcheck="true" -->
+				<div class="inner alt">
+					<section class="spot">
+						<div class="content">
+							<h2 style="text-align: center">New Features and Improvement Made</h2>
+							<p>
+								<h3>IK Leg</h3>
+								Aurora's legs now sit nicely on any surface her foot lands on. This was so much easier to setup in Unreal Engine 5.0 using the new Control Rig feature and the Full Body IK function which are available only for UE5. 
+								<br /><br />
+								Since I have learnt a great deal about Control Rigs in the past month, it was easy to understand how the Leg IK was setup in the Mannequin 5 default character and then copy them to Aurora. 
+								Easy peasy, simple and clean. Setting this up on UE4 without those features was a nightmare.
+							</p>
+							<p>
+								<h3>Save System</h3>
+								The game now has a Save feature. Yay. Players can now Resume the game.
+								<br /><br />
+								This was a challenge to do in the beginning because for one, Aurora's death count is tied, one-way, to the Ice Sculpture actors in the scene. 
+								There were other complications too but I've managed to overcome them.
+								<br /><br />
+								<ul>
+									<li style="margin: 5px;">What the game saves:</li>
+									<ul>
+										<li>Aurora's location and rotation</li>
+										<li>Aurora's attributes</li>
+										<li>Any headgear equipped</li>
+										<li>The last enemy wave count so it will not reset to 1/2. Triggering the enemy spawner after loading will continue from the last wave count.</li>
+									</ul>
+									<li>The game also has a auto-save feature, which will auto-save:</li>
+									<ul>
+										<li>Every 2.5 minutes</li>
+										<li>When the Quit button in the Pause Menu is clicked.</li>
+										<li>When Aurora revives</li>
+										<li>When the End Credits has finished rolling (so players can visit the level again for any end game theatrics *hint hint)</li>
+									</ul>
+								</ul>
+								There is also the Reset Level option which will ... resets everything. This means the save file will be deleted.
+							</p>
+							<p>
+								<h3>Achievements</h3>
+								This took me about 70% of total development time for this version, but I had successfully got it done!
+								<br /><br />
+								<li>There are 10 achievements.</li>
+								<li>A couple of them are secret achievements. 😁</li>
+								<li>The achievements and their description can be viewed in the Pause Menu, along with hints (tooltip) for each one.</li>
+								<li>Achievement unlocks and progress are saved across all playthroughs! (unless you delete the local files in the app data.)</li>
+								<li>There is notification queue-ing functionality. This means if there are 2 or more achievement unlocks at the same time, one notification will be displayed after the other.</li>
+								<br />
+								Do ask me about how I went about developing this feature. It is quite a task. 😄
+							</p>
+							<p>
+								<h3>Analytics</h3>
+								Yes, using the free GameAnalytics. I added some design events at some points in the game.😁
+							</p>
+							<p>
+								<h3>Improvements and fixes</h3>
+								<ul style="margin: 5px;">
+									<li>HUD and UI Rework - A bit better on the eyes.</li>
+									<li>Pause Menu now has soothing music. Also, you can now tap the ESC key again to close the Pause Menu.</li>
+									<li>Disabled the Async Loading plugin, and removed functionality. It simply did not work at all even in version 1.0 - I can still see a black screen. 
+										I tried using the level streaming method but that broke a bunch of stuff in the game. Now, there is simply no loading screen, just a fake one that I forced to 
+										show for 5 seconds (because I want to display the hints). The UE Logo movie will play fully now.</li>
+									<li>Health Bar will now lengthen according to how much Max Health Aurora has after a Revive.</li>
+									<li>Blast Ability - It no longer blends to a fixed camera but will use her own instead. It also has camera shake now. This is way cooler.</li>
+									<li>Converted the particles for the fragments from Cascade to Niagara with ribbon renderer. Spawn Rate was 2000 with Cascade. Now it's just 100. LOL.</li>
+									<li>Other improvements and bug fixes I made but I could not recall at this moment, else this list will go on and on. 😁</li>
+								</ul>
+							</p>
+						</div>
+					</section>
+				</div>
+		</section>
+		<section id="two" class="wrapper style2 special" style="border-top: solid 2px #eeeeee;">
+			<header class="major">
+				<ul style="text-align: center">
+					<a href="GameplayVideoEmbed.html" class="button icon solid scrolly" style="padding: 5px 20px 5px 20px; background-color: #003262;"><h3 style="text-align: center;">Watch Gameplay Video</h3></a>
+				</ul>
+				<p>For mac users, you can watch the gameplay footage instead.</p>
+				<h3>For Windows users, I like to highly recommend playing the demo first BEFORE watching the video. 😅</h3>
+			</header>
+		</section>
 
 		<!-- Two -->
 			<section id="two" class="wrapper">
@@ -111,6 +196,7 @@
 									<li><strong>RPG FX Starter Pack</strong> - Monthly Free Asset in the UE Marketplace</li>
 									<li><strong>Niagara Mega VFX Pack Vol. 1</strong> - Monthly Free Asset from the UE Marketplace</li>
 									<li><strong>Sword Trail Pack</strong> - Monthly Free Asset from the UE Marketplace</li>
+									<li><strong>Fireworks Particles</strong> - Monthly Free Asset from the UE Marketplace</li>
 								</ul>
 								<h4>Sounds</h4>
 								<ul>
@@ -119,6 +205,7 @@
 									<li><a href="https://99sounds.org/free-sound-effects/">99 Sound Effects</a></li>
 									<li><a href="https://assetstore.unity.com/packages/audio/sound-fx/universal-sound-fx-17256">Universal Sound FX by Imphenzia</a> - Actually bought this way back when I was a Unity devleoper.</li>
 									The vocalization of Aurora comes together with Paragon Aurora pack.
+									<li>The achievement notification sound belongs to Sony's PlayStation.</li>
 								</ul>
 								<h4>Music</h4>
 								<a href="www.purple-planet.com">www.purple-planet.com</a>
@@ -135,80 +222,20 @@
 						<div class="content">
 							<h3 style="text-align: center">Known Issues</h3>
 							<p>
-							<h4>AUR-001 | Super short duration of the start-up logo animation and loading screen.</h4>
-									<li>This also means you have a fast computer. Congrats! :P </li>
-									<li>It was a simple setup with Async Loading Screen plugin. I had only solved the issue with the background asset not loading in it by pre-loading it in Blueprint. I would have used the Manual Stop option to be able to control the timing but that would be a Backlog for my Unreal engine experience.</li>
+							<h4>There is a small chance enemies will wander (or get launched) into an area with a barrier and then not able to get out.</h4>
+									<li>Considered a P5 priority because that enemy can still be killed as it will eventually run towards Aurora where her sword can still reach it. </li>
+									<li><b>Solution</b> - Since the game now has a Save feature, simply Quit the game from the Pause Menu (do not force-quit) and relaunch. Especially useful if the enemy is unable to move at all.</li>
 							</p>
 							<p>
-							<h4>AUR-002 | There is a small chance enemies will wander into an area with a barrier and then not able to get out.</h4>
-									<li>Considered a P5 priority because that enemy can still be killed as it will eventually run toward Aurora where her sword can still reach it. </li>
-							</p>
-							<p>
-							<h4>AUR-003 | Enemies turn towards Aurora in an instant.</h4>
-									<li>So... there was no turn rate logic applied to the Move To function.</li>
-									<li>Had known this at the beginning of the project. I did not put it to task in Trello. Only realized this after packaging. That's the story.</li>
-									<li>Will I fix this? Nah. For this small demo, it's fine.</li>
-							</p>
-							<p>
-							<h4>AUR-004 | Frame rate drop upon Aurora's Death</h4>
-								<li>This is due to the special effects activated upon that event. I used the effects provided from the UE Aurora pack, which consists of Cascade particles, which are known to take up significant GPU resources.</li>
-								<li>You would also noticed there is frame rate drop whenever the camera faces the fire pits (higher elevation).</li>
-								<li>Surprisingly, the fire effect was provided with the Starter Content pack... and it's also a Cascade system.</li>
-								<li>Why didn't I convert them to the Niagara system instead? Little experience on Niagara + need to find Unreal developer job asap = no time</li>
+							<h4>Frame rate drop at some points in the game.</h4>
+								<li>The culprit is the extensive use of special effects in the game, some of which consists of Cascade particles, which are known to take up more GPU resources than Niagara ones.</li>
+								<li>Example, if you play the game on a lower-spec PC, you would probably notice there is frame rate drop whenever the camera faces the fire pits (higher elevation).
+									Or when Aurora goes boom when her health is depleted.
+								</li>
+								<li>I have tried my best to convert few particles to Niagara as of version 1.1.</li>
 							</p>
 						</div>
 					</section>
-					<section class="spot">
-						<div class="content">
-							<h3 style="text-align: center">Features abandoned / omitted due to reduced scope.</h3>
-							<p>
-								<h4>IK Leg</h4>
-								<li>There was a Marketplace pack for this, but it was too expansive (includes slope and animation warping) and there were too many variables involved. Integrating it will need more testing of all the animation, thus taking up more time. It does not support UE 5.0 anyways.
-								<li>Will I implement? Probably. Will create a much simpler one perhaps.</li>
-								</p>
-							<p>
-								<h4>Save System</h4>
-								<li>The save system came to mind towards the end of the project. And I really wanted to do this but...
-								<li>Aurora's death count is tied, one-way, to a persistent actor which does not have states set up. This causes complications and I do not want to break the game at this point.</li>
-								<li>Will I implement? Yes soon-ish.</li>
-							</p>
-							<p>
-								<h4>Secret Achievements</h4>
-								<li>What is it? I can't tell you. They are secret achievements.</li>
-								<li>Why? Reduced scope.</li>
-								<li>Will I implement? This will make the demo even more interesting. I see how life goes on for me.</li>
-							</p>
-							<p>
-								<h4>Shooting Stars and a Galaxy based on particles.</h4>
-								<li>This is just to add glitter to an already good-looking demo. P10!</li>
-							</p>
-						</div>
-					</section>
-					<section class="spot">
-						<div class="content">
-							<h3 style="text-align: center">Features intended but scrapped (too ambitious).</h3>
-							<p>
-								<h4>Auto-Target System</h4>
-								<li>Decided not to implement towards the end of the project. But will do this in my next Unreal project.</li>
-							</p>
-							<p>
-								<h4>Ranged Enemy</h4>
-								<li>Constructing its AI Behavior is gonna aged me forward by 20 years. 'Nuff said.</li>
-							</p>
-							<p>
-								<h4>Evil Twin of Aurora as the Final Boss</h4>
-								<li>This will take another 2 months... unpaid.</li>
-								<li>Also, AI Behavior.</li>
-							</p>
-							<p>
-								<h4>To use the Ability System</h4>
-								<li>This was what put me off when I started this project 2 years ago.</li>
-								<li>I still have to learn it.</li>
-								<li>Will I implement? In the next project on an even smaller, more manageable scale.</li>
-							</p>
-						</div>
-					</section>
-
 					<section id="one" class="wrapper style2 special" style="border-top: solid 2px #eeeeee;">
 						<header class="major">
 							<ul style="text-align: center">
