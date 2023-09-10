@@ -75,29 +75,26 @@
 								The game now has a Save feature. Yay. Players can now Resume the game.
 								<br /><br />
 								This was a challenge to do in the beginning because for one, Aurora's death count is tied, one-way, to the Ice Sculpture actors in the scene. 
-								There were other complications too but I've managed to overcome them.
+								There were other complications too but I've managed to overcome them. The system was done in C++.
 								<br /><br />
 								<ul>
-									<li style="margin: 5px;">What the game saves:</li>
+									<li style="margin: 5px;">When the game loads, Aurora will be where she was, with any headgear she equipped in the last save.</li>
+									<li>Her attribute states are also perserved.</li>
+									<li>However, if the last save was her currently engaged in an enemy wave, she will spawn without one as it seemed not appropriate (as almost all games do these days). 
+										BUT triggering the enemy spawner after loading will continue from the last wave count and incrememt. It will not reset to the beginning 1/2 for example.</li>
+									<li>The game also has an auto-save feature, which will auto-save:</li>
 									<ul>
-										<li>Aurora's location and rotation</li>
-										<li>Aurora's attributes</li>
-										<li>Any headgear equipped</li>
-										<li>The last enemy wave count so it will not reset to 1/2. Triggering the enemy spawner after loading will continue from the last wave count.</li>
-									</ul>
-									<li>The game also has a auto-save feature, which will auto-save:</li>
-									<ul>
-										<li>Every 2.5 minutes</li>
-										<li>When the Quit button in the Pause Menu is clicked.</li>
-										<li>When Aurora revives</li>
-										<li>When the End Credits has finished rolling (so players can visit the level again for any end game theatrics *hint hint)</li>
+										<li>Every 2.5 minutes,</li>
+										<li>When the Quit button in the Pause Menu is clicked,</li>
+										<li>When Aurora revives,</li>
+										<li>When the End Credits has finished rolling (so players can visit the level again for any end game theatrics <em>*hint hint</em>).</li>
 									</ul>
 								</ul>
-								There is also the Reset Level option which will ... resets everything. This means the save file will be deleted.
+								There is also the Reset Level option which will ... reset everything. This means the save file will be deleted, and player starts in a fresh new game.
 							</p>
 							<p>
 								<h3>Achievements</h3>
-								This took me about 70% of total development time for this version, but I had successfully got it done!
+								This took me about 70% of total development time for this version, but I had successfully got it done! This system was also done in C++.
 								<br /><br />
 								<li>There are 10 achievements.</li>
 								<li>A couple of them are secret achievements. 😁</li>
