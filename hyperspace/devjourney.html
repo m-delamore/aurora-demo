@@ -227,19 +227,20 @@
 									<h3>Reiterating the method</h3>
 									<p>In the beginning, I came up with a rather <u>crude solution</u> - determine the angle of the attacker relative to the melee damage receiver using FindLookAtRotation.
 									<ul>
-										<li>The receiver has 8 angle segments. If the hit comes from the front, then it is Segments '1' (0 to 15 deg) & '8' (345 to 360 deg).</li>
-										<li>FindLookAtRotation gives the rotation value of an actor relative to the owner. However, the output needs to be recalculated into more useful angles.</li>
+										<li>The receiver has 8 angle segments. If the hit comes from the front, then it is Segments '1' & '8' (or 0 to 15 deg & 345 to 360 deg respectively).</li>
+										<li>FindLookAtRotation gives the rotation value of an actor relative to the owner. The output angle needs to be recalculated into more useful terms.</li>
 									</ul>
 									</p>
 									<a href="images/HitReactFunction-MD.png" class="image"><img src="images/HitReactFunction-MD.png" alt=""/></a>
 									<p>However, as I learn more about game development in C++ and 3D Math, I now know to use the <b>dot and cross product</b>.
 									<ol>
-										<li>Get the attacker's forward vector. This requires a change to the function signature with the addition of an extra argument.</li>
-										<li>Next, get the hit direction of the melee damage receiver.</li>
-										<li>Use Dot Product to determine if the hit direction comes from the front or back of the damage receiver.</li>
-										<li>Use Cross Product to determine if the hit direction comes from the left or right side of the damage receiver.</li>
+										<li>Get the melee damage receiver's forward vector and also the vector from the attacker to the receiver (hit direction).</li>
+										<li>Use Dot Product to determine if the hit comes from the front or back of the receiver.</li>
+										<li>Use Cross Product to determine if the hit comes from the left or right side of the receiver.</li>
+										<li>Play the hit react animation accordingly.</li>
 									</ol>
 									</p>
+									<a href="images/HitReactDotCross.png" class="image"><img src="images/HitReactDotCross.png" alt=""/></a>
 
 								</section>
 							</div>
